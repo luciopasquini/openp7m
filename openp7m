@@ -7,6 +7,15 @@
 #VERSION=0.1
 #------------------------------------------------------------------------------#
 
-filename=$(basename "$1")
-openssl smime -verify -inform DER -in "$1" -noverify  -out /tmp/"${filename%.*}"
-xdg-open /tmp/"${filename%.*}"
+FILE="$(zenity --file-selection --title="Seleziona il file")"
+
+case $? in
+        0)
+            FILENAME=$(basename "$FILE")
+            openssl smime -verify -inform DER -in "$FILE" -noverify -out ~/"${FILENAME%.*}"
+            xdg-open ~/"${FILENAME%.*}";;
+        1)
+            zenity --error --text="Nessun file selezionato !";;
+        -1)
+            zenity --error --text="Errore inatteso !";;
+esac
