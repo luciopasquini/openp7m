@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Exec=arpav-openp7m
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[it_IT]=arpav-openp7m.desktop
+Name=Apre file p7m
+Comment[it_IT]=
+Comment=
+Icon=/usr/share/pixmaps/arpetta-openp7m.png

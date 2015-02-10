@@ -1,1 +1,1 @@
-Open p7m files
+Provide package to open p7m files

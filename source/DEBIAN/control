@@ -1,0 +1,12 @@
+Package: arpav-openp7m
+Version: 0.1
+Maintainer: Alessio Tomelleri <atomelleri@arpa.veneto.it>
+Architecture: all
+Installed-Size: 200
+Section: misc
+Priority: optional
+Provides: arpav-openp7m
+Conflicts: arpav-openp7m
+Replaces: arpav-openp7m
+Description: ARPAV openp7m utility
+ Created to provide an handler for p7m files.
