@@ -1,2 +1,7 @@
 #!/bin/bash
-echo "In sviluppo"
+filename=$(basename "$1")
+openssl smime -verify -inform DER -CAfile /usr/local/bin/caitalia.pem -binary -in "$1" -signer /tmp/"${filename%.*}".cer -out /tmp/"${filename%.*}" > /tmp/"${filename%.*}".log 2>&1
+openssl x509 -in /tmp/"${filename%.*}".cer -subject -nameopt multiline -noout >> /tmp/"${filename%.*}".log
+Verifica=`cat /tmp/"${filename%.*}".log`
+`zenity --info --text="${Verifica}"`
+xdg-open /tmp/"${filename%.*}"
